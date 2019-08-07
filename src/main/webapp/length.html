@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="login" >
+		
+			
+				<table >
+					<tr>
+						<td>用户名:</td>
+						<td><input  /></td>
+						<td>性别:</td>
+						<td><input /></td>
+					</tr>
+					<tr>
+						<td>email:</td>
+						<td><input name="email"  id="email" data-options="required:true" maxlength="6"/></td>
+					</tr>
+					<tr><input type="file" id="file_input">
+  						<img src="" class="img" />
+  					</tr>
+					
+				</table>
+			
+		
+	
+</body>
+<script type="text/javascript">
+ $("input[type='file']").change(function(){   
+	 var file = this.files[0];
+	   if (window.FileReader) {    
+	            var reader = new FileReader();    
+	            reader.readAsDataURL(file);    
+	            //监听文件读取结束后事件    
+	          reader.onloadend = function (e) {
+	            $(".img").attr("src",e.target.result);    //e.target.result就是最后的路径地址
+	            };    
+	       } 
+	});
+
+</script>
+</html>

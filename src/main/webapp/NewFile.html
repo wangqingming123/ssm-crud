@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="webapp/static/js/FileSaver.js"></script>
+<script type="text/javascript">
+function downloadTextFile (mobileCode) {
+//mobileCode 为写入文件的内容，可以通过获取文本框的value写入
+    var file = new File([mobileCode], "test.json", { type: "text/plain;charset=utf-8" });
+    saveAs(file);
+}
+</script>
+</head>
+<body>
+
+</head>
+
+<button onclick='downloadTextFile(123)'>创建一个文本文件</button>
+
+</body>
+</html>
